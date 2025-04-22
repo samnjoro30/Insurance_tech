@@ -4,7 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
-
+h1{
+  background-image: url('./assets/_.jpeg');
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text ;
+  color:#130808;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -38,5 +43,5 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: #130808;
 }

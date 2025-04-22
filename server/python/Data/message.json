@@ -1,0 +1,20 @@
+{
+    "message": [
+      {
+        "tag": "greeting",
+        "patterns": ["hi", "hello", "hey", "good morning"],
+        "responses": ["Hello!", "Hi there!", "Hey! How can I help you with insurance today?"]
+      },
+      {
+        "tag": "get_quote",
+        "patterns": ["I want a quote", "how much is insurance?", "give me an estimate"],
+        "responses": ["Sure! I can help you with that. What kind of coverage are you looking for?"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["bye", "see you", "goodbye"],
+        "responses": ["Goodbye!", "See you soon!", "Have a great day!"]
+      }
+    ]
+  }
+  
