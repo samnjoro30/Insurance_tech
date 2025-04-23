@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <h1>Great App Insurance</h1>
+      {/* <h1>Great App Insurance</h1> */}
       <Register />
     </>
   )
