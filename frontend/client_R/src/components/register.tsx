@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axiosInstance from './axiosInstance';
 import axios from 'axios';
 import './styles.css/register.css';
 
@@ -31,7 +32,7 @@ const Register: React.FC = () => {
 
     try {
       const endpoint = isLogin ? '/login' : '/register';
-      const response = await axios.post(`http://localhost:5000/api/auth${endpoint}`, formData);
+      const response = await axiosInstance.post(`http://localhost:5000/api/auth${endpoint}`, formData);
 
       console.log(isLogin ? 'Login successful' : 'Registration successful', response.data);
 
