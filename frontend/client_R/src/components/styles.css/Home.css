@@ -6,6 +6,7 @@
   --dark: #212529;
   --gray: #6c757d;
   --white: #ffffff;
+
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
@@ -41,27 +42,29 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  background-color: var(--white);
+  padding: 0.5rem 5%; 
+  background-color: var(--primary-dark);
   box-shadow: var(--shadow);
   position: sticky;
-  top: 0;
-  z-index: 100;
+  height: 100px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary);
+  align-items: center;
 }
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav a {
   font-weight: 500;
-  padding: 0.5rem 0;
+  /* padding: 0.3rem 0; */
   position: relative;
 }
 
@@ -124,7 +127,82 @@ header {
   background-color: #e67100;
   transform: translateY(-3px);
 }
-
+/*Insurance packages*/
+.insurance-covers{
+  background-color: var(--white);
+  text-align: center;
+}
+.insurance-covers h2 {
+  font-size:2rem;
+  color: blue;
+}
+.covers-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.cover-card {
+  background: white;
+  color: var(--dark);
+  display: row;
+  box-shadow: var(--shadow);
+  display: flex;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius:10px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.cover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.cover-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  background: #f0f8ff;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+.insurance-covers h3{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+.insurance-covers p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.insurance-covers ul{
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  max-width: 90%;
+}
+.insurance-covers li{
+  color: #555;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  position: relative;
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+.insurance-covers li::before {
+  content: "✓";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
 /* Features Section */
 .features {
   padding: 5rem 5%;
@@ -159,19 +237,23 @@ header {
 }
 
 .card h3 {
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 1rem;
   font-size: 1.5rem;
+  font-style: italic;
 }
 
 /* CTA Section */
 .cta {
   padding: 5rem 5%;
   text-align: center;
-  background-color: var(--primary);
+  background-color: var(--white);
   color: var(--white);
 }
-
+.cta-container {
+  box-shadow: var(--shadow);
+  width: 80%;
+}
 .cta h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -261,11 +343,11 @@ header {
 @media (max-width: 768px) {
   header {
     flex-direction: column;
-    padding: 1rem;
+    padding: 0rem;
   }
 
   .nav {
-    margin-top: 1rem;
+    margin-top: 0rem;
     gap: 1rem;
   }
 
@@ -286,10 +368,11 @@ header {
 
   .hero h1 {
     font-size: 1.8rem;
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 
   .hero p {
     font-size: 1rem;
   }
 }
+ 
