@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axiosInstance from './axiosInstance';
-import axios from 'axios';
+
 import './styles.css/register.css';
 
 interface FormData {
@@ -8,9 +8,11 @@ interface FormData {
   email: string;
   password: string;
 }
-
-const Register: React.FC = () => {
-  const [isLogin, setIsLogin] = useState(true);
+interface RegisterProps {
+  initialMode: 'login' | 'register';
+}
+const Register: React.FC<RegisterProps> = ({ initialMode }) => {
+  const [isLogin, setIsLogin] = useState(initialMode === 'login');
   const [loading, setLoading] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     username: '',

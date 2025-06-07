@@ -1,7 +1,10 @@
-
+import React, { useState, useEffect} from 'react';
+import Register from '../components/register';
 import '../components/styles.css/Home.css';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
+
   return (
     <div className="home">
       <header>
@@ -10,8 +13,8 @@ export default function Home() {
             <a href="#">Home</a>
             <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#login">Login</a>
-            <a href="#register">Register</a>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </nav>
       </header>
       {/* Hero Section */}
@@ -100,15 +103,6 @@ export default function Home() {
               <li>Mobile claim submission</li>
               <li>Average 48-hour processing</li>
               <li>Direct deposit payouts</li>
-            </ul>
-          </div>
-          <div className="card">
-            <h3>Local Expertise</h3>
-            <p>With over 20 years serving our community, we understand your unique needs. Our agents live where you live and can provide personalized advice.</p>
-            <ul>
-              <li>Community-focused</li>
-              <li>Knowledge of local risks</li>
-              <li>Personalized service</li>
             </ul>
           </div>
         </div>
