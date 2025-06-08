@@ -1,6 +1,4 @@
-import React, { useState, useEffect} from 'react';
-import Register from '../components/register';
-import '../components/styles.css/Home.css';
+  import '../components/styles.css/Home.css';
 import { Link } from 'react-router-dom';
 
 export default function Home() {

@@ -4,15 +4,17 @@ body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to right, #909ccc, #cbd5f7);
+  min-height: 100vh;
 }
 .auth-container {
   position: relative;
   width: 100%;
   max-width: 900px; /* Increased width to accommodate both panels */
-  height: 550px; /* Fixed height for the container */
+  height: 600px;  /*Fixed height for the container*/
   border-radius: 4px;
   box-shadow: 0 5px 15px rgba(168, 157, 157, 0.1);
   overflow: hidden;
+  padding-top: 50px;
   margin: 20px auto;
   display: flex;
 }
@@ -28,6 +30,7 @@ h2 {
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   background-color: #fff;
+  
 }
 
 /* Left Panel (Form) */
