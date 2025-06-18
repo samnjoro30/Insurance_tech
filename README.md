@@ -5,7 +5,8 @@ This is the frontend of **Insurance**, a modern, responsive insurance web applic
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- External CSS
+- [Tailwind css](https://tailwindcss.com/)
+-  External CSS
 
 This is the technologies used in backend in **Insurance**
 
