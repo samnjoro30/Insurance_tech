@@ -122,56 +122,65 @@ export default function Home() {
       </section>
 
       <footer className="footer">
-  <div className="footer-content">
-    
-    <div className="footer-section about">
-      <h3>Shield Insurance</h3>
-      <p>
-        Trusted coverage for your life, health, and property. We've got you covered.
-      </p>
-    </div>
+  <video className="footer-video" autoPlay muted loop playsInline>
+    <source src="/foot.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-    <div className="footer-section links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#login">Login</a></li>
-        <li><a href="#register">Register</a></li>
-        <li><a href="#faq">FAQs</a></li>
-      </ul>
-    </div>
+  <div className="footer-overlay">
+    <div className="footer-content">
 
-    <div className="footer-section contact">
-      <h4>Contact Us</h4>
-      <p>Email: support@shieldinsurance.com</p>
-      <p>Phone: +254 799 169720</p>
-      <p>Address: 123 Nairobi Ave, Kenya</p>
-      <div className="socials">
-        <a href="#" aria-label="Facebook">📘</a>
-        <a href="#" aria-label="Twitter">🐦</a>
-        <a href="#" aria-label="Instagram">📸</a>
-        <a href="#" aria-label="LinkedIn">💼</a>
+      {/* Sections (same as before) */}
+      <div className="footer-section about">
+        <h3>Shield Insurance</h3>
+        <p>
+          Trusted coverage for your life, health, and property. We've got you covered.
+        </p>
       </div>
+
+      <div className="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#login">Login</a></li>
+          <li><a href="#register">Register</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div className="footer-section contact">
+        <h4>Contact Us</h4>
+        <p>Email: support@shieldinsurance.com</p>
+        <p>Phone: +254 799 169720</p>
+        <p>Address: 123 Nairobi Ave, Kenya</p>
+        <div className="socials">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="LinkedIn">💼</a>
+        </div>
+      </div>
+
+      <div className="footer-section newsletter">
+        <h4>Stay Updated</h4>
+        <p>Subscribe to our newsletter for insurance tips and offers.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
     </div>
 
-    <div className="footer-section newsletter">
-      <h4>Stay Updated</h4>
-      <p>Subscribe to our newsletter for insurance tips and offers.</p>
-      <form>
-        <input type="email" placeholder="Enter your email" />
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </div>
-
-  <div className="footer-bottom">
-    <p>&copy; {new Date().getFullYear()} Shield Insurance Co. All rights reserved.</p>
-    <div className="footer-links">
-      <a href="#privacy">Privacy Policy</a>
-      <a href="#terms">Terms of Service</a>
-      <a href="#accessibility">Accessibility</a>
+    <div className="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Shield Insurance Co. All rights reserved.</p>
+      <div className="footer-links">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Service</a>
+        <a href="#accessibility">Accessibility</a>
+      </div>
     </div>
   </div>
 </footer>
