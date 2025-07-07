@@ -136,11 +136,11 @@ export default function Home() {
           <div className="footer-section contact">
             <h4>Contact Us</h4>
             <p>Email: support@shieldinsurance.com</p>
-            <p>Phone: +123 456 7890</p>
+            <p>Phone: +254 799 169720</p>
             <div className="socials">
-              <span>🔵</span> {/* Facebook */}
-              <span>🐦</span> {/* Twitter */}
-              <span>📸</span> {/* Instagram */}
+              <span></span> {/* Facebook */}
+              <span></span> {/* Twitter */}
+              <span></span> {/* Instagram */}
             </div>
           </div>
         </div>

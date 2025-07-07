@@ -6,6 +6,7 @@
   --dark: #212529;
   --gray: #6c757d;
   --white: #ffffff;
+  --back: rgb(132, 110, 183); 
 
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
@@ -43,7 +44,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 5%; 
-  background-color: var(--primary-dark);
+  background-color: var(--back);
   box-shadow: var(--shadow);
   position: sticky;
   height: 150px;
@@ -129,7 +130,7 @@ header {
 }
 /*Insurance packages*/
 .insurance-covers{
-  background-color: var(--white);
+  background-color: var(--back);
   text-align: center;
 }
 .insurance-covers h2 {
@@ -392,9 +393,11 @@ header {
 
 /* Footer Styles */
 .footer {
-  background-color: var(--dark);
-  color: var(--white);
+  background-color: radial-gradient(circle, #1c1583, #3c1cae);;
+  color: var(--dark);
   padding: 3rem 5% 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .footer-content {
