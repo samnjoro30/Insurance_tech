@@ -61,13 +61,6 @@ const Register: React.FC<RegisterProps> = ({ initialMode }) => {
           {/* <h2 className="text-3xl font-bold mb-6">{isLogin ? 'Sign In' : 'Sign Up'}</h2> */}
           <h2>{isLogin ? 'Sign In' : 'Sign Up'}</h2>
 
-          <div className="auth-social">
-            <button className="border p-2 rounded"><i>G+</i></button>
-            <button className="border p-2 rounded"><i>f</i></button>
-            <button className="border p-2 rounded"><i>GH</i></button>
-            <button className="border p-2 rounded"><i>in</i></button>
-          </div>
-
           <p className="text-sm mb-4">or use your email {isLogin ? 'to sign in' : 'to register'}</p>
 
           <form onSubmit={handleSubmit}>
