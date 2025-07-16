@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const register =async (req, res) => {
     try{
-      const {username, email, password} = req.body;
+      const {username, firstName, lastName, phone_number, email, password} = req.body;
 
       const existingUser = await auth.findOne({ email })
       if(existingUser){
@@ -16,7 +16,10 @@ const register =async (req, res) => {
 
       const User = new auth({
         username,
+        firstName,
+        lastName,
         email,
+        phone_number,
         password: hashedPassword
        })
       await User.save();
