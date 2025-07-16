@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import axiosInstance from './axiosInstance';
 
+
 import './styles.css/register.css';
 
 interface FormData {
   username: string;
+  firstName: string;
+  lastName: string;
   email: string;
+  phone_number: string;
   password: string;
+  confirmPassword: string;
 }
 interface RegisterProps {
   initialMode: 'login' | 'register';
@@ -16,8 +21,12 @@ const Register: React.FC<RegisterProps> = ({ initialMode }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     username: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    password: ''
+    phone_number: '',
+    password: '',
+    confirmPassword: ''
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,17 +43,24 @@ const Register: React.FC<RegisterProps> = ({ initialMode }) => {
 
     try {
       const endpoint = isLogin ? '/login' : '/register';
-      const response = await axiosInstance.post(`http://localhost:5000/api/auth${endpoint}`, formData);
+      const response = await axiosInstance.post(`/auth${endpoint}`, formData);
 
       console.log(isLogin ? 'Login successful' : 'Registration successful', response.data);
 
       setFormData({
         username: '',
+        firstName: '',
+        lastName: '',
         email: '',
-        password: ''
+        phone_number: '',
+        password: '',
+        confirmPassword: ''
       });
 
       alert(isLogin ? 'Login successful!' : 'Registration successful!');
+      setTimeout(() => {
+        // Navigate('/dash')
+      })
     } catch (error: any) {
       console.error('Authentication error:', error);
       alert(`Authentication failed: ${error.response?.data?.message || 'Please try again.'}`);
@@ -76,6 +92,25 @@ const Register: React.FC<RegisterProps> = ({ initialMode }) => {
               />
             )}
 
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                placeholder="John"
+               // className="w-full p-2 mb-4 border rounded bg-gray-100"
+                required
+              />
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                placeholder="simiyu"
+               // className="w-full p-2 mb-4 border rounded bg-gray-100"
+                required
+              />
+
             <input
               type="email"
               name="email"
@@ -86,13 +121,30 @@ const Register: React.FC<RegisterProps> = ({ initialMode }) => {
               required
             />
 
+
+            <input 
+              type="text"
+              name="phone_number"
+              value={formData.phone_number}
+              onChange={handleChange}
+              placeholder="07XXXXXXXX"
+              required
+            />
+
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Password"
               // className="w-full p-2 mb-4 border rounded bg-gray-100"
+              required
+            />
+            <input
+              type="Password"
+              name="confirmPassword"
+              value={formData.username}
+              onChange={handleChange}
+               // className="w-full p-2 mb-4 border rounded bg-gray-100"
               required
             />
 
