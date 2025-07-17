@@ -24,8 +24,10 @@ const DB = async() =>{
 DB()
 
 const auth = require("./routes/auth");
+const dash = require("./routes/dash")
 
 app.use('/api/auth', auth);
+app.use('/api/dash', dash);
 
 const port = process.env.PORT;
 
