@@ -1,0 +1,34 @@
+const http = require('http');
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors')
+
+require('dotenv').config();
+
+const app = express();
+
+app.use(express.json());
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+ })) 
+
+const DB = async() =>{
+    try{
+       await mongoose.connect(process.env.MONGO_CLOUD);
+       console.log("COnnected to mongo successfull");
+    }catch(error){
+        console.error("Cant connect to database", error);
+    }
+}
+DB()
+
+const auth = require("./routes/auth");
+
+app.use('/api/auth', auth);
+
+const port = process.env.PORT;
+
+app.listen(port, () =>{
+    console.log(`server running on port ${port}`);
+})
