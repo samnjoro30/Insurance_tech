@@ -11,7 +11,7 @@ interface FormData {
   email: string;
   phone_number: string;
   password: string;
-  confirmPassword: string;
+  //confirmPassword: string;
 }
 interface RegisterProps {
   initialMode: 'login' | 'register';
@@ -26,7 +26,7 @@ const Register: React.FC<RegisterProps> = ({ initialMode }) => {
     email: '',
     phone_number: '',
     password: '',
-    confirmPassword: ''
+    //confirmPassword: ''
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,7 +54,7 @@ const Register: React.FC<RegisterProps> = ({ initialMode }) => {
         email: '',
         phone_number: '',
         password: '',
-        confirmPassword: ''
+        //confirmPassword: ''
       });
 
       alert(isLogin ? 'Login successful!' : 'Registration successful!');
@@ -139,14 +139,14 @@ const Register: React.FC<RegisterProps> = ({ initialMode }) => {
               // className="w-full p-2 mb-4 border rounded bg-gray-100"
               required
             />
-            <input
+            {/* <input
               type="Password"
               name="confirmPassword"
               value={formData.username}
               onChange={handleChange}
                // className="w-full p-2 mb-4 border rounded bg-gray-100"
               required
-            />
+            /> */}
 
             {isLogin && (
               <a href="#" className="text-sm text-blue-500 mb-4 block">Forgot Your Password?</a>
