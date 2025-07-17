@@ -114,6 +114,29 @@ h2 {
   background-color: #5b21b6;
 }
 
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #090b0e; /* Tailwind's gray-700 */
+}
+
+.next {
+  width: 50%;
+  padding: 0.75rem;
+  background-color: #54be52;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+
+}
 /* Right Panel (Toggle Section) */
 .Welcome_text {
   flex: 1;
