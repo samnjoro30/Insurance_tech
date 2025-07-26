@@ -9,11 +9,10 @@ const register =async (req, res) => {
 
       const existingUser = await auth.findOne({ email })
       if(existingUser){
-        return res.status(400).json({ message: "User exists"});
+        return res.status(400).json({ message: "User exists "});
       }
 
       const hashedPassword = await bcrypt.hash(password, 12)
-
       const User = new auth({
         username,
         firstName,
@@ -22,6 +21,7 @@ const register =async (req, res) => {
         phone_number,
         password: hashedPassword
        })
+
       await User.save();
       res.status(201).json({ message: 'User registered successfully' });
     }catch(error){
@@ -30,7 +30,7 @@ const register =async (req, res) => {
    }
 }
 
-const login = async(req, res) => {
+const login = async (req, res) => {
     try{
       const { email, password} = req.body;
 
@@ -40,9 +40,20 @@ const login = async(req, res) => {
       const isMatch = await bcrypt.compare(password, auth.password);
       if(!isMatch) return res.status(400).json({message : "Incorrect Password"})
 
-      const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: '2h'});
+      const access_token = jwt.sign({
+          user_id: user_id,
+      }, 
+        process.env.JWT_SECRET,{
+          expiresIn: '1h'
+        }
+      )
 
-      res.json({ message: 'Login successful', token });
+      //const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: '2h'});
+
+      res.status(200).json({
+          message: 'Login successful', 
+          access_token
+        });
     }catch(error){
         res.status(500).json({message: "Error loging in"});
         console.log("server error loging in", error);
