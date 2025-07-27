@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import axios from 'axios';
+import { Eye, EyeOff } from 'lucide-react';
 
 interface FormData {
     email: string;
@@ -11,6 +12,7 @@ interface FormData {
 
 export default function Adminlogin (){
     const [loading, setLoading] = useState<boolean>(false);
+    const [showPassword, setShowPassword] = useState<boolean>(false)
     const [formData, setFormData] = useState<FormData>({
         email: '',
         workId: '',
@@ -23,9 +25,10 @@ export default function Adminlogin (){
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
+        setLoading(true);
 
         try{
+            "use server"
             const res = await axios.post("admin/login", formData)
             setFormData(res.data.message);
         }catch(err){
@@ -68,6 +71,11 @@ export default function Adminlogin (){
                           onChange={handleChange}
                           required
                         />
+                        <span
+                          onClick = {() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? <EyeOff /> : <Eye/> }
+                        </span>
                     </div>
                     <button
                        type="submit"
