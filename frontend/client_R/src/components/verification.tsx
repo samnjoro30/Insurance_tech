@@ -24,7 +24,7 @@ const Verification = () => {
         setMessage(''); // Clear previous message
 
         try {
-            const res = await axios.post('/verify', formData); // Replace with your actual endpoint
+            const res = await axios.post('/verify', formData); 
             setMessage(res.data.message || 'Verification successful');
         } catch (error: any) {
             setMessage(

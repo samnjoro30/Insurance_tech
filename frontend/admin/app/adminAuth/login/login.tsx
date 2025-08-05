@@ -84,7 +84,6 @@ export default function Adminlogin (){
                     </button>
                 </form>
             </div>
-
         </div>
     )
 
