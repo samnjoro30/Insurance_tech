@@ -12,7 +12,7 @@ app.use(cors({
     origin: [ 
         'http://localhost:5173',
         "https://insurance-tech-xi.vercel.app",
-    ]
+    ],
     credentials: true
  })) 
 
