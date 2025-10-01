@@ -2,6 +2,7 @@ const http = require('http');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors')
+const { Mongo_Db } = require('./config/db');
 
 require('dotenv').config();
 
@@ -14,17 +15,7 @@ app.use(cors({
         "https://insurance-tech-xi.vercel.app",
     ],
     credentials: true
- })) 
-
-const DB = async() =>{
-    try{
-       await mongoose.connect(process.env.MONGO_CLOUD);
-       console.log("COnnected to mongo successfull");
-    }catch(error){
-        console.error("Cant connect to database", error);
-    }
-}
-DB()
+ }))
 
 const auth = require("./routes/auth");
 const dash = require("./routes/dash")
